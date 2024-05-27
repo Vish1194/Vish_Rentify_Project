@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config({path:'../.env'});
 
 //----------------------------------------------------------------------------------------------
+const DB_HOST = process.env.DB_HOST;
 const BACKEND_PORT = process.env.BACKEND_PORT;
 const FRONTEND_PORT = process.env.FRONTEND_PORT;
 const DB_USERNAME = process.env.DB_USERNAME;
@@ -38,7 +39,7 @@ app.use(cors(
 app.use(express.json());
 
 const con = mysql2.createConnection({
-    host:'localhost',port:DB_PORT, user:DB_USERNAME , password:DB_PASSWORD ,database:DB_DBNAME
+    host:DB_HOST, port:DB_PORT, user:DB_USERNAME , password:DB_PASSWORD ,database:DB_DBNAME
 })
 
 app.listen(BACKEND_PORT,()=>{console.log('Server Running at  http://localhost/'+BACKEND_PORT)})
