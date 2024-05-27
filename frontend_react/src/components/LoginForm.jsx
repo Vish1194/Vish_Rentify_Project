@@ -12,7 +12,7 @@ const LoginForm = () =>{
     const login = async (e) =>{
         e.preventDefault();
         try {
-            const response = await axios.post('/api/login',{email:email,password:password});
+            const response = await axios.post('https://vish-rentify-project.onrender.com/login',{email:email,password:password});
             if(response.status === 200){
                 navigate('/dashboard')
             }
