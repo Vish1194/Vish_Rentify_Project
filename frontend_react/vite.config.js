@@ -10,6 +10,7 @@ const targetApiUrl = 'https://vish-rentify-project.onrender.com';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "./",
   plugins: [react()],
   server:{
     port: FRONTEND_PORT,
