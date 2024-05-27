@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PropertyListing from "./PropertyListing";
 
-// axios.defaults.withCredentials=true;
+axios.defaults.withCredentials=true;
 
 
 const Dashboard = () =>{
