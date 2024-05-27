@@ -32,7 +32,7 @@ app.use(session(
 app.use(cors(
     {
         credentials:true,
-        origin:'http://localhost:'+FRONTEND_PORT,
+        origin:'https://vish-rentify-project-1.onrender.com/'+FRONTEND_PORT,
     }
 ))
 
