@@ -44,6 +44,10 @@ const con = mysql2.createConnection({
 
 app.listen(BACKEND_PORT,()=>{console.log('Server Running at  http://localhost/'+BACKEND_PORT)})
 
+app.get('/',(req,res)=>{
+    res.send('Server running using Render')
+})
+
 app.post('/login',async (req,res)=>{
     const {email,password} = req.body;
     try {
