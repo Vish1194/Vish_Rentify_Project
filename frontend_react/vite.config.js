@@ -6,7 +6,7 @@ dotenv.config({path:'../.env'});
 const FRONTEND_PORT = process.env.FRONTEND_PORT;
 const BACKEND_PORT = process.env.BACKEND_PORT;
 
-const targetApiUrl = 'https://vish-rentify-project.onrender.com:'+BACKEND_PORT;
+const targetApiUrl = 'https://vish-rentify-project.onrender.com';
 
 // https://vitejs.dev/config/
 export default defineConfig({
