@@ -20,11 +20,13 @@ const PropertyListing = ({user_id}) =>{
     return(
         <>
         <h2 className="text-center my-4">All Posted Properties</h2>
+            { propertyDetails.length>0 &&
             <div className="property-listing">
                 {propertyDetails.map((j) => (
                     <PropertyCard key={j.property_id} id={j.property_id} place={j.place} address={j.address} bedrooms={j.bedrooms} bathroooms={j.bathroooms} amenities={j.amenities} price={j.price}/>
                 ))}
             </div>
+            }
         </>
     )
 }

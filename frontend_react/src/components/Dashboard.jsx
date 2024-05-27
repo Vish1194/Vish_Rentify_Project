@@ -18,6 +18,7 @@ const Dashboard = () =>{
                 if(response.status === 200){
                     setUserInfo(response.data);
                     setFlag(true);
+                    console.log(response.data);
                 }
             } catch (error) {
                 if(error){
