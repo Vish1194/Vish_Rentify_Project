@@ -42,7 +42,7 @@ const con = mysql2.createConnection({
     host:DB_HOST, port:DB_PORT, user:DB_USERNAME , password:DB_PASSWORD ,database:DB_DBNAME
 })
 
-app.listen(BACKEND_PORT,()=>{console.log('Server Running at  http://localhost/'+BACKEND_PORT)})
+app.listen(BACKEND_PORT,()=>{console.log('Server Running at  '+BACKEND_PORT)})
 
 app.get('/',(req,res)=>{
     res.send('Server running using Render')
