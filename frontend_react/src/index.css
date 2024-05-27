@@ -1,0 +1,34 @@
+.bg-grad-green{
+    background: rgb(2,0,36);
+    background: linear-gradient(137deg, rgba(2,0,36,1) 0%, rgba(87,166,161,1) 72%, rgba(0,212,255,1) 100%);
+  }
+  .bg-grad-blue{
+    background: rgb(2,0,36);
+    background: linear-gradient(209deg, rgba(2,0,36,1) 0%, rgba(87,116,166,1) 76%, rgba(0,212,255,1) 100%);
+  }
+
+  .dashboard-banner1{
+    background-image: url(./assets/images/banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .property-listing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 5%;
+  }
+
+  .bg-img{
+    background-image: url(./assets/images/banner4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
