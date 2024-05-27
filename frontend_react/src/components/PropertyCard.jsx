@@ -9,7 +9,7 @@ const PropertyCard = ({isDashboard=true,id,place,address,bedrooms,bathrooms,amen
 
     const removeProperty = async () =>{
         try {
-            const response = await axios.post('/api/remove-property',{id:id})
+            const response = await axios.post('https://vish-rentify-project.onrender.com/remove-property',{id:id})
             if(response.status === 200){
                 alert('Property Removed Successfully.')
                 navigate('/dashboard');

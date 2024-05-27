@@ -27,7 +27,7 @@ const PropertySellForm = () =>{
     const submitSellInfo =  async (e) =>{
         e.preventDefault();
         try {
-            const response = await axios.post('/api/sell-property', {place:formData.place,address:formData.address,bedrooms:formData.bedrooms,bathrooms:formData.bathrooms,amenities:formData.amenities,price:formData.price,user_id:user_id});
+            const response = await axios.post('https://vish-rentify-project.onrender.com/sell-property', {place:formData.place,address:formData.address,bedrooms:formData.bedrooms,bathrooms:formData.bathrooms,amenities:formData.amenities,price:formData.price,user_id:user_id});
             if(response.status === 200){
                 alert('Property registered Successful');
                 navigate('/dashboard')

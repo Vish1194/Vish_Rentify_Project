@@ -13,7 +13,7 @@ const MyProperties = () =>{
     useEffect(()=>{
         const myProperty = async () =>{
             try {
-                const response = await axios.post('/api/my-property',{id:data});
+                const response = await axios.post('https://vish-rentify-project.onrender.com/my-property',{id:data});
                 setProperty(response.data);
             } catch (error) {
                 console.log(error)

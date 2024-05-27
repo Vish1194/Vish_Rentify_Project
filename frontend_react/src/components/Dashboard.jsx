@@ -14,7 +14,7 @@ const Dashboard = () =>{
     useEffect(()=>{
         const checkLogin = async () =>{
             try {
-                const response = await axios.post('/api/isLoggedIn');
+                const response = await axios.post('https://vish-rentify-project.onrender.com/isLoggedIn');
                 if(response.status === 200){
                     setUserInfo(response.data);
                     setFlag(true);

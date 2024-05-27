@@ -14,7 +14,7 @@ const SearchPage = () =>{
     useEffect(()=>{
         const getProperty = async () =>{
             try {
-                const response = await axios.post('/api/search',{search:data});
+                const response = await axios.post('https://vish-rentify-project.onrender.com/search',{search:data});
                 setPropertyDetails(response.data);
             } catch (error) {
                 if(error){

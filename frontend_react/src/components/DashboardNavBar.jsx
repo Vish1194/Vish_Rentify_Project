@@ -4,7 +4,7 @@ import axios from "axios"
 const DashboardNavBar = () =>{
 
     const logout =async () =>{
-        const response = await axios.post('/api/logout')
+        const response = await axios.post('https://vish-rentify-project.onrender.com/logout')
         console.log(response.data);
     }
 

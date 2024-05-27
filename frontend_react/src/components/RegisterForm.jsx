@@ -21,7 +21,7 @@ const RegisterForm = () =>{
     const register = async (e) =>{
         e.preventDefault();
         try {
-            const response = await axios.post('/api/registerUser', {fname:formData.fname,lname:formData.lname,email:formData.email,mobile:formData.mobile,password:formData.password});
+            const response = await axios.post('https://vish-rentify-project.onrender.com/registerUser', {fname:formData.fname,lname:formData.lname,email:formData.email,mobile:formData.mobile,password:formData.password});
             if(response.status === 200){
                 alert('Register Successful');
                 navigate('/');

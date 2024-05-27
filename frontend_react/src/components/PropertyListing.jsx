@@ -9,7 +9,7 @@ const PropertyListing = ({user_id}) =>{
     useEffect(()=>{
         const getAllProperty = async () =>{
             try {
-                const response = await axios.post('/api/all-properties',{id:user_id});
+                const response = await axios.post('https://vish-rentify-project.onrender.com/all-properties',{id:user_id});
                 setPropertyDetails(response.data);
             } catch (error) {
 

@@ -15,7 +15,7 @@ const PropertyInfo = () =>{
     useEffect(()=>{
         const getProperty = async () =>{
             try {
-                const response = await axios.post('/api/get-property',{id:property_id});
+                const response = await axios.post('https://vish-rentify-project.onrender.com/get-property',{id:property_id});
                 setProperty(response.data);
                 console.log(response.data)
             } catch (error) {

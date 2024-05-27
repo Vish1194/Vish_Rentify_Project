@@ -22,7 +22,7 @@ const UpdateProperty = () =>{
     useEffect(()=>{
         const getDetail = async () =>{
             try {
-                const response = await axios.post('/api/get-property',{id:id})
+                const response = await axios.post('https://vish-rentify-project.onrender.com/get-property',{id:id})
                 setFormData(response.data)
             } catch (error) {
                 console.log(error);
@@ -38,7 +38,7 @@ const UpdateProperty = () =>{
     const submitSellInfo =  async (e) =>{
         e.preventDefault();
         try {
-            const response = await axios.post('/api/update-property', {place:formData.place,address:formData.address,bedrooms:formData.bedrooms,bathrooms:formData.bathrooms,amenities:formData.amenities,price:formData.price,id:id});
+            const response = await axios.post('https://vish-rentify-project.onrender.com/update-property', {place:formData.place,address:formData.address,bedrooms:formData.bedrooms,bathrooms:formData.bathrooms,amenities:formData.amenities,price:formData.price,id:id});
             if(response.status === 200){
                 alert('Property Update Successful');
                 navigate('/dashboard')
