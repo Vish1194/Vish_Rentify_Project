@@ -13,7 +13,7 @@ export default defineConfig({
   base: "./",
   plugins: [react()],
   server:{
-    port: FRONTEND_PORT,
+    port: FRONTEND_PORT || 3000,
     proxy: {
       '/api': { // Matches requests starting with '/api'
         target: targetApiUrl, // Replace with your API URL
