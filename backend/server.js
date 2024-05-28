@@ -66,6 +66,9 @@ app.post('/login',async (req,res)=>{
             console.log(req.session.userDetail);
             res.status(200).send('Login Successful.');
         }
+        else{
+            res.status(200).send('No data found.')
+        }
     } catch (error) {
         if(error){
             res.status(404).send('Unsuccessful Login attempt.');
