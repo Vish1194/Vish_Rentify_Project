@@ -29,14 +29,14 @@ app.use(session(
 ))
 
 
-app.use(cors(
-    {
-        credentials:true,
-        origin: 'https://vish-rentify-project.vercel.app',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type', 'Authorization']
-    }
-))
+const corsOptions = {
+    origin: 'https://vish-rentify-project.vercel.app', // Replace with your actual frontend URL if different
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  };
+  app.use(cors(corsOptions));
+  
 
 app.use(express.json());
 
