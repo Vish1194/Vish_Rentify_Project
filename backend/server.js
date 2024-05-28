@@ -4,6 +4,9 @@ import mysql2 from "mysql2/promise.js"
 import cors from "cors"
 import dotenv from 'dotenv';
 
+import { Sequelize, DataTypes } from "sequelize";
+import connectSessionSequelize from "connect-session-sequelize";
+
 dotenv.config({path:'../.env'});
 
 //----------------------------------------------------------------------------------------------
@@ -19,22 +22,32 @@ const MySQLStore = session.Store; // Assuming connect-mysql2 uses default export
 
 const app = express();
 
-const sessionStore = new MySQLStore({
-    // Configure connection details for your MySQL database
-    host: DB_HOST,
-    port: DB_PORT,
-    user: DB_USERNAME,
-    password: DB_PASSWORD,
-    database: DB_DBNAME,
-  });
+const sequelize = new Sequelize(DB_DBNAME, DB_USERNAME, DB_PASSWORD, {
+  host: DB_HOST,
+  port: DB_PORT,
+  dialect: "mysql",
+});
+
+const SessionStore = connectSessionSequelize(session.Store);
+const sessionStore = new SessionStore({
+  db: sequelize,
+  tableName: "sessions",
+});
   
-  app.use(session({
+app.use(
+  session({
     secret: "SomeSecretCode", // Replace with a strong and unique secret key
     resave: false,
     saveUninitialized: false,
     store: sessionStore,
     cookie: { maxAge: 1000 * 60 * 60, secure: "auto" }, // Adjust cookie settings as needed
-  }));
+  })
+);
+
+// Synchronize the session table with the database
+(async () => {
+    await sequelize.sync();
+  })();
 
 const corsOptions = {
     origin: 'https://vish-rentify-project.vercel.app', // Replace with your actual frontend URL if different
