@@ -23,9 +23,10 @@ app.use(session(
     {
         secret:"SomeSecretCode",
         rolling:true,
-        cookie:{maxAge:1000*60*60 , httpOnly:true},
+        cookie:{maxAge:1000*60*60 , secure:"auto"},
         resave:false,
-        saveUninitialized:false
+        saveUninitialized:false,
+        store: new session.MemoryStore(), // Use MemoryStore
     }
 ))
 
