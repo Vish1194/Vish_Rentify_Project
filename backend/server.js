@@ -92,7 +92,7 @@ app.post('/isLoggedIn',(req,res)=>{
     if(req.session.userDetail){
         res.status(200).send(req.session.userDetail);
     }else{
-        res.status(404).send('Not Logged In.');
+        res.status(500).send('Not Logged In.');
     }
 })
 
