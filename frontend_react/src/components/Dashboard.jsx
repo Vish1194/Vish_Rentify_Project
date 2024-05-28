@@ -27,7 +27,7 @@ const Dashboard = () =>{
                 }
             }
         }
-        checkLogin();
+        setTimeout(()=>checkLogin(),3000);
     },[])
 
 
