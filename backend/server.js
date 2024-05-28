@@ -8,7 +8,7 @@ dotenv.config({path:'../.env'});
 
 //----------------------------------------------------------------------------------------------
 const DB_HOST = process.env.DB_HOST;
-const BACKEND_PORT = process.env.BACKEND_PORT;
+const BACKEND_PORT = process.env.BACKEND_PORT || 5099;
 const FRONTEND_PORT = process.env.FRONTEND_PORT;
 const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
