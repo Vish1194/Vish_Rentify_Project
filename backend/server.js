@@ -22,7 +22,7 @@ const app = express();
 app.use(session(
     {
         secret:"SomeSecretCode",
-        cookie:{maxAge:1000*60*60},
+        cookie:{maxAge:1000*60*60 , httpOnly:false},
         resave:false,
         saveUninitialized:false
     }
