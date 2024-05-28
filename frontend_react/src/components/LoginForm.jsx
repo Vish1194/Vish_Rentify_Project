@@ -15,9 +15,11 @@ const LoginForm = () =>{
         try {
             const response = await axios.post('https://vish-rentify-project.onrender.com:443/login',{email:email,password:password});
             if(response.status === 200){
+                console.log(response.data);
                 navigate('/dashboard')
             }
         } catch (error) {
+            console.log(error)
             alert('Incorrect Username / Password.')
         }
     }
