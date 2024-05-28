@@ -30,7 +30,7 @@ app.use(session(
 
 
 const corsOptions = {
-    origin: 'https://vish-rentify-project.vercel.app', // Replace with your actual frontend URL if different
+    origin: '*', // Replace with your actual frontend URL if different
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
