@@ -56,6 +56,7 @@ app.post('/login',async (req,res)=>{
         const [row] =await (await con).query('select * from user where email=? and password =?',[email,password]);
         if(row.length>0){
             req.session.userDetail = row[0];
+            console.log(req.session.userDetail);
             res.status(200).send('Login Successful.');
         }
     } catch (error) {
@@ -66,6 +67,8 @@ app.post('/login',async (req,res)=>{
 })
 
 app.post('/isLoggedIn',(req,res)=>{
+    console.log('Is Logged in Session')
+    console.log(req.session.userDetail)
     if(req.session.userDetail){
         res.status(200).send(req.session.userDetail);
     }else{
