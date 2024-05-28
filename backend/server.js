@@ -11,7 +11,7 @@ dotenv.config({path:'../.env'});
 
 //----------------------------------------------------------------------------------------------
 const DB_HOST = process.env.DB_HOST;
-const BACKEND_PORT = process.env.BACKEND_PORT || 5099;
+const BACKEND_PORT = process.env.BACKEND_PORT || 443;
 const FRONTEND_PORT = process.env.FRONTEND_PORT;
 const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
@@ -52,8 +52,8 @@ app.use(
 const corsOptions = {
     origin: 'https://vish-rentify-project.vercel.app', // Replace with your actual frontend URL if different
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    // methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    // allowedHeaders: ['Content-Type', 'Authorization'],
   };
   app.use(cors(corsOptions));
   
