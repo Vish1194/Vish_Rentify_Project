@@ -22,6 +22,7 @@ const Dashboard = () =>{
                 }
             } catch (error) {
                 if(error){
+                    console.log(error);
                     navigate('/');
                 }
             }
