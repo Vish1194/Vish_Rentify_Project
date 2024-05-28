@@ -15,21 +15,26 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_DBNAME = process.env.DB_DBNAME;
 const DB_PORT = process.env.DB_PORT;
 //----------------------------------------------------------------------------------------------
-
+const MySQLStore = session.Store; // Assuming connect-mysql2 uses default export
 
 const app = express();
 
-app.use(session(
-    {
-        secret:"SomeSecretCode",
-        rolling:true,
-        cookie:{maxAge:1000*60*60 , secure:"auto"},
-        resave:false,
-        saveUninitialized:false,
-        store: new session.MemoryStore(), // Use MemoryStore
-    }
-))
-
+const sessionStore = new MySQLStore({
+    // Configure connection details for your MySQL database
+    host: DB_HOST,
+    port: DB_PORT,
+    user: DB_USERNAME,
+    password: DB_PASSWORD,
+    database: DB_DBNAME,
+  });
+  
+  app.use(session({
+    secret: "SomeSecretCode", // Replace with a strong and unique secret key
+    resave: false,
+    saveUninitialized: false,
+    store: sessionStore,
+    cookie: { maxAge: 1000 * 60 * 60, secure: "auto" }, // Adjust cookie settings as needed
+  }));
 
 const corsOptions = {
     origin: 'https://vish-rentify-project.vercel.app', // Replace with your actual frontend URL if different
