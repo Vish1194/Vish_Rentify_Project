@@ -22,6 +22,7 @@ const app = express();
 app.use(session(
     {
         secret:"SomeSecretCode",
+        rolling:true,
         cookie:{maxAge:1000*60*60 , httpOnly:true},
         resave:false,
         saveUninitialized:false
