@@ -32,7 +32,7 @@ app.use(session(
 app.use(cors(
     {
         credentials:true,
-        origin:'https://vish-rentify-project.vercel.app:3000',
+        origin: 'https://vish-rentify-project.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization']
     }
