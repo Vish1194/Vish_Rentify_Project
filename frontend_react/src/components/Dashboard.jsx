@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PropertyListing from "./PropertyListing";
 
-axios.defaults.withCredentials=true;
 
 
 const Dashboard = () =>{
@@ -14,6 +13,7 @@ const Dashboard = () =>{
     useEffect(()=>{
         const checkLogin = async () =>{
             try {
+                axios.defaults.withCredentials=true;
                 const response = await axios.post('https://vish-rentify-project.onrender.com:443/isLoggedIn');
                 if(response.status === 200){
                     setUserInfo(response.data);

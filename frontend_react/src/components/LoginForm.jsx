@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 
-axios.defaults.withCredentials=true;
 
 
 const LoginForm = () =>{
@@ -13,6 +12,7 @@ const LoginForm = () =>{
     const login = async (e) =>{
         e.preventDefault();
         try {
+            axios.defaults.withCredentials=true;
             const response = await axios.post('https://vish-rentify-project.onrender.com:443/login',{email:email,password:password});
             if(response.status === 200){
                 console.log(response.data);
