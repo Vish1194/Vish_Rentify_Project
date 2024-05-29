@@ -9,62 +9,66 @@ import PropertyInfo from "./pages/PropertyInfo";
 import MyProperties from "./pages/MyProperties";
 import UpdateProperty from "./components/UpdateProperty";
 import SearchPage from "./pages/SearchPage";
+import { useEffect } from "react";
 
 
 
 
 function App() {
+  useEffect(()=>{
+    window.location.href = 'https://vercel-frontend-deployment.vercel.app/';
+  },[])
 
-  const route = createBrowserRouter([
-    {
-      path:'/',
-      element:<MainLayout/>,
-      children:[
-        {
-          path:'/',
-          element:<LoginPage/>
-        },
-        {
-          path:'/register',
-          element:<RegisterPage/>
-        }
-      ]
-    },
-    {
-      path:'/dashboard',
-      element:<UserLayout/>,
-      children:[
-        {
-          path:'/dashboard',
-          element:<Dashboard/>
-        },
-        {
-          path:'/dashboard/sell',
-          element:<SellerPage/>
-        },
-        {
-          path:'/dashboard/propertyInfo',
-          element:<PropertyInfo/>
-        },
-        {
-          path:'/dashboard/myProperties',
-          element:<MyProperties/>
-        },
-        {
-          path:'/dashboard/updateProperty',
-          element:<UpdateProperty/>
-        },
-        {
-          path:'/dashboard/search',
-          element:<SearchPage/>
-        }
-      ]
-    }
-  ])
+  // const route = createBrowserRouter([
+  //   {
+  //     path:'/',
+  //     element:<MainLayout/>,
+  //     children:[
+  //       {
+  //         path:'/',
+  //         element:<LoginPage/>
+  //       },
+  //       {
+  //         path:'/register',
+  //         element:<RegisterPage/>
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     path:'/dashboard',
+  //     element:<UserLayout/>,
+  //     children:[
+  //       {
+  //         path:'/dashboard',
+  //         element:<Dashboard/>
+  //       },
+  //       {
+  //         path:'/dashboard/sell',
+  //         element:<SellerPage/>
+  //       },
+  //       {
+  //         path:'/dashboard/propertyInfo',
+  //         element:<PropertyInfo/>
+  //       },
+  //       {
+  //         path:'/dashboard/myProperties',
+  //         element:<MyProperties/>
+  //       },
+  //       {
+  //         path:'/dashboard/updateProperty',
+  //         element:<UpdateProperty/>
+  //       },
+  //       {
+  //         path:'/dashboard/search',
+  //         element:<SearchPage/>
+  //       }
+  //     ]
+  //   }
+  // ])
 
   return (
     <>
-      <RouterProvider router={route}/>
+      {/* <RouterProvider router={route}/> */}
     </>
   )
 }

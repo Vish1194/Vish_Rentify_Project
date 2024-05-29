@@ -18,7 +18,6 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_DBNAME = process.env.DB_DBNAME;
 const DB_PORT = process.env.DB_PORT;
 //----------------------------------------------------------------------------------------------
-const MySQLStore = session.Store; // Assuming connect-mysql2 uses default export
 
 const app = express();
 
